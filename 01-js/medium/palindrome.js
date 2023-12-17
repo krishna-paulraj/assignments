@@ -4,7 +4,36 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  let main_str = str
+    .toLowerCase()
+    .split("")
+    .filter(
+      (char) =>
+        char !== " " &&
+        char !== "?" &&
+        char !== "," &&
+        char !== "!" &&
+        char !== "."
+    )
+    .join("");
+
+  let str_copy = main_str
+    .toLowerCase()
+    .split("")
+    .filter(
+      (char) =>
+        char !== " " &&
+        char !== "?" &&
+        char !== "," &&
+        char !== "!" &&
+        char !== "."
+    )
+    .reverse()
+    .join("");
+  console.log(main_str, str_copy);
+  return main_str === str_copy ? true : false;
 }
+
+console.log(isPalindrome("racecar!"));
 
 module.exports = isPalindrome;
